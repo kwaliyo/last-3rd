@@ -1,0 +1,1 @@
+<livewire:night-time-component />
