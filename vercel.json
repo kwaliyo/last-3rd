@@ -1,26 +1,29 @@
 {
     "version": 2,
-      "framework": null,
+    "framework": null,
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.6.1" }
+        "api/index.php": { "runtime": "vercel-php@0.9.0" }
     },
     "routes": [
         {
             "src": "/build/(.*)",
-            "dest": "/public/build/"
+            "dest": "/public/build/$1"
         },
         {
             "src": "/resources/(.*)",
-            "dest": "/public/resources/"
+            "dest": "/public/resources/$1"
         },
         {
-            "src": "/favicon/(.*)",
-            "dest": "/public/favicon/"
+            "src": "/favicon.ico",
+            "dest": "/public/favicon.ico"
         },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
-        }],
+        }
+    ],
+    "outputDirectory": "public",
+    "buildCommand": "npm run build",
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
