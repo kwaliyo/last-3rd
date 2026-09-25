@@ -1,26 +1,17 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Livewire\NightTimeComponent;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| The Last 3rd application routes. Both root and /night point to
+| the full-page Livewire NightTimeComponent.
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/night', function () {
-    return view('welcome');
-});
-
-
-Route::get('/night', NightTimeComponent::class);
+Route::get('/', NightTimeComponent::class)->name('home');
+Route::get('/night', NightTimeComponent::class)->name('night');
